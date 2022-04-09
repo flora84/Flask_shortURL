@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Short URL</title>
+    {% if URL %}
+    <!--<a href={{ URL}}>click me!</a>-->
+    <meta http-equiv="refresh" content="0;url={{URL}}">
+
+    {% endif %}
+</head>
+<body>
+    <form action="sort_URL" method="post">
+        <input type="text" name="LongURL" value="{{longURL}}" />
+        <input type="submit" name="toSort" value="Send" />
+    </form>
+    <p><a href={{sortURL}}>{{ sortURL }}</a></p>
+    <p>{{ URL }}</p>
+</body>
+</html>
