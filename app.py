@@ -37,5 +37,5 @@ def go():
     return render_template("index.html",URL=URL);
 if __name__ == '__main__':
     import os
-    webbrowser. open('http://localhost:5555')
+    webbrowser.open('http://localhost:5555')
     app.run('localhost',port='5555')
