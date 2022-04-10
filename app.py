@@ -24,17 +24,18 @@ def sort_URL():
     if request.method=="POST":
         longUrl =request.form['LongURL']
         count+=1
-        Sort_to_Long_URL[count] = longUrl
+        C = str(count)
+        Sort_to_Long_URL[C] = longUrl
             
     return render_template("index.html",longURL=longUrl,sortURL=("http://localhost:5555/go?sortURL="+str(count)))
 @app.route('/go',methods=['GET'])
 def go():
     global Sort_to_Long_URL,count
     if request.method=="GET":
-        key =request.args['sortURL']
-        print(Sort_to_Long_URL.get(key))
+        key = request.args['sortURL']
+        URL = Sort_to_Long_URL[key]
 
-    return render_template("index.html",URL=Sort_to_Long_URL[count]);
+    return render_template("index.html",URL=URL);
 if __name__ == '__main__':
     import os
     webbrowser. open('http://localhost:5555')
