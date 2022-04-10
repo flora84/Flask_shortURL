@@ -5,7 +5,6 @@ It contains the definition of routes and views for the application.
 from flask import Flask, render_template, request
 from flask.wrappers import Request
 import webbrowser
-import pyshorteners as psn
 
 app = Flask(__name__)
 
